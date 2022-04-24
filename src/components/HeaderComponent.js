@@ -5,27 +5,29 @@ function Header () {
     return(
         <div>
             <Navbar color="primary">
-                <NavbarBrand>
-                    <img 
-                        src='assets/images/logo.png'
-                        width="40"
-                        alt="Logo"
-                    />
-                </NavbarBrand>
+                <div className='container'>
+                    <NavbarBrand>
+                        <img 
+                            src='assets/images/logo.png'
+                            width="40px"
+                            alt="Logo"
+                        />
+                    </NavbarBrand>
 
-                <Nav>
-                    <NavItem>
-                        <span className='fa fa-user fa-lg'></span> Nhân viên
-                    </NavItem>
+                    <Nav>
+                        <NavItem>
+                            <span className='fa fa-user fa-lg'></span> Nhân viên
+                        </NavItem>
 
-                    <NavItem>
-                        <span className='fa fa-building'></span> Phòng ban
-                    </NavItem>
+                        <NavItem>
+                            <span className='fa fa-building'></span> Phòng ban
+                        </NavItem>
 
-                    <NavItem>
-                        <span className='fa fa-dollar-sign'></span> Bảng lương
-                    </NavItem>
-                </Nav>
+                        <NavItem>
+                            <span className='fa fa-dollar-sign'></span> Bảng lương
+                        </NavItem>
+                    </Nav>
+                </div>
             </Navbar>
         </div>
     )
