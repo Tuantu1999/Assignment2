@@ -42,7 +42,7 @@ function Main() {
                 />
 
                 <Route path="/salary"
-                    component={() => <Salary salar={nhanvien.Salaries} />}
+                    component={() => <Salary salar={nhanvien.staffs} />}
                 />
             </Switch>
             <Footer />
