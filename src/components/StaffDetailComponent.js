@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import dateFormat from "dateformat";
 
 function StaffDetail(props){
-    console.log(props);
     if(props.staffById != null){
         return(
             <div className="container">
@@ -38,7 +37,6 @@ function StaffDetail(props){
 
 
 function RenderStaff({ staff }) {
-    console.log('staff',staff);
     if (staff != null) {
         return (
             <div className="col-12">
