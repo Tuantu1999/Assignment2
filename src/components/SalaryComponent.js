@@ -23,6 +23,51 @@ function RenderSalary ({salary}) {
     )
 }
 
+const Salary = (props) => {
+    const [sortSalary, setSortSalary] = useState()
 
+    const salary = props.salar
+    .sort((a,b) => 
+        sortSalary ? a.salaryScale - b.salaryScale : b.salaryScale - a.salaryScale)
+    .map((sa) => {
+        return (
+            <div 
+                key={sa.id}
+                className="col-12 col-md-6 col-lg-4 mt-2 mb-2"
+            >
+                <RenderSalary 
+                    salary={sa}
+                />
+            </div>
+        )
+    })
+
+    return (
+        <div className="container">
+            <div className="row">
+                <Breadcrumb>
+                    <BreadcrumbItem>
+                        <Link 
+                            to="/staff" 
+                            className="text-decoration-none"
+                        >
+                            Nhân viên
+                        </Link>
+                    </BreadcrumbItem>
+                    <BreadcrumbItem active>Bảng Lương</BreadcrumbItem>
+                </Breadcrumb>
+            </div>
+            <button
+                className="btn btn-primary"
+                onClick={() => setSortSalary(!sortSalary)}
+            >
+                Sắp xếp theo hệ số lương
+            </button>
+            <div className="row shadow mb-3 mt-3">
+                {salary}
+            </div>
+        </div>
+    )
+}
 
 export default Salary;
