@@ -3,9 +3,9 @@ import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbIte
 import { Link } from 'react-router-dom';
 import dateFormat from "dateformat";
 
-function StaffDetail(props){
-    if(props.staffById != null){
-        return(
+function StaffDetail(props) {
+    if (props.staffById != null) {
+        return (
             <div className="container">
                 <div className="row">
                     <Breadcrumb>
@@ -25,50 +25,58 @@ function StaffDetail(props){
                 </div>
                 <div className="row mb-3">
                     <RenderStaff staff={props.staffById} />
-                </div>                    
+                </div>
             </div>
         );
-    }else{
-        return(
+    } else {
+        return (
             <div></div>
         );
-    }  
+    }
 }
 
 
 function RenderStaff({ staff }) {
     if (staff != null) {
         return (
-            <div className="col-12">
-                <Card>
-                    {/* Ảnh nhân viên */}
-                    <img src={staff.image} width="200px" height="200px" alt={staff.name} className="m-5" />
-
-                    {/* Thẻ thông tin nhân viên */}
-                    <CardBody>
-                        <CardTitle>Họ và tên: {staff.name}</CardTitle>
-
-                        <CardText>
-                            Ngày sinh: {dateFormat(staff.doB, "dd/mm/yyyy")}
-                        </CardText>
-
-                        <CardText>
-                            Ngày vào công ty: {dateFormat(staff.startDate, "dd/mm/yyyy")}
-                        </CardText>
-
-                        <CardText>
-                            Phòng ban: {staff.department.name}
-                        </CardText>
-
-                        <CardText>
-                            Số ngày nghỉ còn lại: {staff.annualLeave}
-                        </CardText>
-
-                        <CardText>
-                            Số ngày đã làm thêm: {staff.overTime}
-                        </CardText>
-                    </CardBody>
-                </Card>
+            <div className="card mb-3 container-fluid">
+                <div className="row g-0 mb-2 mt-2">
+                    <div className="col-12 col-md-4 col-lg-3 text-center">
+                        <img
+                            src={staff.image}
+                            width = "200" height= "250"
+                            alt={staff.name}
+                        />
+                    </div>
+                    <div className="col-12 col-md-8 col-lg-9">
+                        <div className="card-body">
+                            <h5 className="card-title">
+                                Họ và tên: {staff.name}
+                            </h5>
+                            <hr />
+                            <p className="card-text">
+                                Ngày sinh:
+                                {dateFormat(staff.doB, "dd/mm/yyyy")}
+                            </p>
+                            <p className="card-text">
+                                Ngày vào công ty:
+                                {dateFormat(staff.startDate, "dd/mm/yyyy")}
+                            </p>
+                            <p className="card-text">
+                                Phòng ban:
+                                {staff.department.name}
+                            </p>
+                            <p className="card-text">
+                                Số ngày nghỉ còn lại:
+                                {staff.annualLeave}
+                            </p>
+                            <p className="card-text">
+                                Số ngày đã làm thêm:
+                                {staff.overTime}
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
 
